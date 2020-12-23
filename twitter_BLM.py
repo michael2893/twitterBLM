@@ -5,10 +5,10 @@ import tweepy
 ## pip install pandas for the dataframe
 
 try:
-    consumer_key = "esYHqOwZzrFxhNs4VWusCneM1"      ## my bots secret keys, i really don't care, USE it but be reasonable
-    consumer_secret = "CkMWgyDYZwk1xBOnEIFXuKtZo98JCyvm2JnGFHqVH7vOblUHt6"
-    access_token = "1258923150303285248-nxxBtoaDiV9ByhwxAPAhsW2Y1TUUo9"
-    access_token_secret = "QHLvYoSPVzVHZXL6Hzd5Wibh4ALTRn0M05HekKAIKHaG4"
+    consumer_key = ""      ## my bots secret keys
+    consumer_secret = ""
+    access_token = ""
+    access_token_secret = ""
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth,wait_on_rate_limit=True)
@@ -29,10 +29,6 @@ try:
     for user_name in users:
         api.update_status(user_name + " " + "https://www.paypal.me/theokraproject")
         
-## for all users send tweets
-
-    df.to_csv('list.csv')
-    ## convert to CSV
 
 except tweepy.TweepError as error:
     if error.api_code == 187:
